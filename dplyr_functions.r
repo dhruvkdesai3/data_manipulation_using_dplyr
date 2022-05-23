@@ -6,10 +6,10 @@ df<-gapminder
 
 
 ###dimensions of the df
-dim(gapminder)
+dim(df)
 
 ### basic structure of the df
-str(gapminder)
+str(df)
 
 ### detailed summary of the df
 summary(df)
@@ -60,13 +60,13 @@ df %>% select(country, lifeExp:gdpPercap)
 
 
 # Include any column starting with a given string 
-gapminder %>%
+df %>%
   select(country, year, starts_with("co"))
 # Include any column ending with a given string
-gapminder %>%
+df %>%
   select(country, year, ends_with("Exp"))
 # Keep the last column, by any name
-gapminder %>%
+df %>%
   select(country, year, last_col())
 
 
@@ -118,12 +118,12 @@ df %>%
 
 
 # "and" operator function 
-gapminder %>% 
+df %>% 
   select(pop, country, year) %>%        
   filter(pop > 50000, pop < 100000)
 
 # "and" operator function 2
-gapminder %>% 
+df %>% 
   select(pop, country, year) %>%        
   filter(pop > 50000 & pop < 100000)
 
@@ -143,7 +143,7 @@ df %>%
 df%>%
   summarize(avg_gdp = mean(gdpPercap))
 
-# standar??d deviation
+# standar̥d deviation
 df %>%
   summarize(gdp_standard_dev = sd(gdpPercap))
 # variance
